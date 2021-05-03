@@ -116,9 +116,10 @@
 }
 
 - (void)updateText {
-    if (_count < 1) {
+    if (_count < 1 || self.text.length > _count) {
         return;
     }
+
     NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
     [style setAlignment:self.textAlignment];
     NSDictionary *defaultAttributes = @{NSFontAttributeName: self.font,
